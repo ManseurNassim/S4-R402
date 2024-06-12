@@ -1,10 +1,10 @@
-package org.example;
+package Nassim;
 
 public class Voiture {
     private String marque;
-    private float prix;
+    private double prix;
 
-    public Voiture(String m, float p){
+    public Voiture(String m, double p){
         this.marque=m;
         this.prix=p;
     }
@@ -12,7 +12,7 @@ public class Voiture {
     public String getMarque(){
         return this.marque;
     }
-    public float getPrix(){
+    public double getPrix(){
         return this.prix;
     }
 
@@ -20,7 +20,7 @@ public class Voiture {
         this.marque = marque;
     }
 
-    public void setPrix(float prix) {
+    public void setPrix(double prix) {
         this.prix = prix;
     }
 }

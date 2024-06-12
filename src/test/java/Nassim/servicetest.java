@@ -1,14 +1,11 @@
 package Nassim;
 
-
-import Nassim.Voiture;
-import Nassim.service;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class serviceTest {
+public class servicetest {
     private service service;
     private Voiture v1;
     private Voiture v2;
@@ -20,12 +17,12 @@ public class serviceTest {
     @BeforeEach
     void setUp() {
         service = new service();
-        v1 = new Voiture("Tesla", 5000);
-        v2 = new Voiture("BMW", 7000);
-        v3 = new Voiture("Audi", 8000);
-        v4 = new Voiture("Mercedes", 10000);
-        v5 = new Voiture("Renault", 4000);
-        v6 = new Voiture("Peugeot", 6000);
+        v1 = new Voiture("Toyota", 6000);
+        v2 = new Voiture("Honda", 8000);
+        v3 = new Voiture("Nissan", 10000);
+        v4 = new Voiture("Ford", 12000);
+        v5 = new Voiture("Chevrolet", 5000);
+        v6 = new Voiture("Volkswagen", 7000);
     }
 
     @Test
@@ -39,7 +36,7 @@ public class serviceTest {
     void testPrix() {
         service.ajouter(v1);
         service.ajouter(v2);
-        assertEquals(12000, service.prix());
+        assertEquals(14000, service.prix());
     }
 
     @Test
@@ -49,9 +46,9 @@ public class serviceTest {
         service.ajouter(v3);
         service.ajouter(v4);
         service.ajouter(v5); // 5 voitures -> 5% de remise
-        assertEquals(34000 - (0.05 * 34000), service.prix());
+        assertEquals(41000 - (0.05 * 41000), service.prix());
         service.ajouter(v6); // 6 voitures -> toujours 5% de remise
-        assertEquals(40000 - (0.05 * 40000), service.prix());
+        assertEquals(48000 - (0.05 * 48000), service.prix());
     }
 
     @Test
