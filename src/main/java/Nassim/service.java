@@ -2,32 +2,31 @@ package Nassim;
 
 import Nassim.Voiture;
 import java.util.ArrayList;
-import java.util.List;
 
 public class service implements Statistique {
-    private List<Voiture> listeVoiture;
+    private ArrayList<Voiture> Voitures;
 
     public service() {
-        this.listeVoiture = new ArrayList<>();
+        this.Voitures = new ArrayList<>();
     }
 
     @Override
-    public void ajouter(Voiture     voiture) {
-        this.listeVoiture.add(voiture);
+    public void ajouter(Voiture voiture) {
+        this.Voitures.add(voiture);
     }
 
     @Override
     public int prix() throws ArithmeticException {
-        if (listeVoiture.isEmpty()) {
-            throw new ArithmeticException("La liste de voitures est vide");
+        if (Voitures.isEmpty()) {
+            throw new ArithmeticException("Aucune voiture est dans la liste");
         }
 
         int sommePrix = 0;
-        for (Voiture voiture : listeVoiture) {
+        for (Voiture voiture : Voitures) {
             sommePrix += voiture.getPrix();
         }
 
-        int nombreVoitures = listeVoiture.size();
+        int nombreVoitures = Voitures.size();
         int nombreRemises = nombreVoitures / 5;
         double remise = Math.min(nombreRemises * 0.05 * sommePrix, 20000.0);
         int prixFinal = (int) (sommePrix - remise);
@@ -35,18 +34,18 @@ public class service implements Statistique {
         return prixFinal;
     }
 
-    public List<Voiture> getListeVoiture() {
-        return listeVoiture;
+    public ArrayList<Voiture> getVoitures() {
+        return Voitures;
     }
 
-    public void setListeVoiture(List<Voiture> listeVoiture) {
-        this.listeVoiture = listeVoiture;
+    public void setVoitures(ArrayList<Voiture> Voitures) {
+        this.Voitures = Voitures;
     }
 
     @Override
     public String toString() {
         return "service{" +
-                "listeVoiture=" + listeVoiture +
+                "La liste de voitures=" + Voitures +
                 '}';
     }
 }
