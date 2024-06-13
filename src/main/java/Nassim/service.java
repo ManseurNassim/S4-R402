@@ -1,10 +1,7 @@
 package Nassim;
-
-import Nassim.Voiture;
 import java.util.ArrayList;
 
-public class service implements Statistique {
-    private ArrayList<Voiture> Voitures;
+public class service implements Statistique {    private ArrayList<Voiture> Voitures;
 
     public service() {
         this.Voitures = new ArrayList<>();
