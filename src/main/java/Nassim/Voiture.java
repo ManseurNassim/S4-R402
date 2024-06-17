@@ -2,17 +2,17 @@ package Nassim;
 
 public class Voiture {
     private String marque;
-    private double prix;
+    private int prix; // Changement de Double à int
 
-    public Voiture(String m, double p){
-        this.marque=m;
-        this.prix=p;
+    public Voiture(String m, int p){
+        this.marque = m;
+        this.prix = p;
     }
 
     public String getMarque(){
         return this.marque;
     }
-    public double getPrix(){
+    public int getPrix(){
         return this.prix;
     }
 
@@ -20,7 +20,11 @@ public class Voiture {
         this.marque = marque;
     }
 
-    public void setPrix(double prix) {
+    public void setPrix(int prix) {
         this.prix = prix;
+    }
+    @Override
+    public String toString() {
+        return "Voiture{marque='" + marque + "', prix=" + prix + "}";
     }
 }
