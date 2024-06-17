@@ -26,9 +26,8 @@ public class service implements Statistique {    private ArrayList<Voiture> Voit
         int nombreVoitures = Voitures.size();
         int nombreRemises = nombreVoitures / 5;
         double remise = Math.min(nombreRemises * 0.05 * sommePrix, 20000.0);
-        int prixFinal = (int) (sommePrix - remise);
 
-        return prixFinal;
+        return (int) (sommePrix - remise);
     }
 
     public ArrayList<Voiture> getVoitures() {
@@ -41,8 +40,6 @@ public class service implements Statistique {    private ArrayList<Voiture> Voit
 
     @Override
     public String toString() {
-        return "service{" +
-                "La liste de voitures=" + Voitures +
-                '}';
+        return "service{La liste de voitures=" + Voitures.toString() + "}";
     }
 }
